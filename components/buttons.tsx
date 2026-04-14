@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, ViewStyle } from 'react-native';
 import { Colors } from '@/constants/colors';
+import { Typography } from '@/constants/typography';
 
 interface PrimaryButtonProps {
   label: string;
@@ -55,8 +56,7 @@ const styles = StyleSheet.create({
   },
   primaryText: {
     color: 'white',
-    fontSize: 14,
-    fontWeight: '700',
+    ...Typography.button,
   },
   disabled: {
     opacity: 0.6,
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
   },
   secondaryText: {
     color: Colors.primary,
-    fontSize: 14,
-    fontWeight: '700',
+    ...Typography.button,
   },
 });

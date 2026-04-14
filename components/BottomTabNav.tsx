@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import { Colors } from '@/constants/colors';
+import { Typography } from '@/constants/typography';
 import { Feather, AntDesign } from '@expo/vector-icons';
 
 interface BottomTabNavProps {
@@ -93,9 +94,8 @@ const styles = StyleSheet.create({
     marginTop: 0,
   },
   label: {
-    fontSize: 9,
+    ...Typography.captionSmall,
     color: Colors.text_muted,
-    fontWeight: '500',
   },
   activeLabel: {
     color: Colors.primary,

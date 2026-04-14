@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { Colors } from '@/constants/colors';
+import { Typography } from '@/constants/typography';
 import { Product } from '@/types';
 
 interface ProductCardProps {
@@ -95,14 +96,12 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   title: {
-    fontSize: 12,
-    fontWeight: '700',
+    ...Typography.bodySmallBold,
     color: Colors.text_main,
     marginBottom: 2,
   },
   price: {
-    fontSize: 14,
-    fontWeight: '800',
+    ...Typography.bodyBold,
     color: Colors.primary,
     marginBottom: 5,
   },
@@ -112,7 +111,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   location: {
-    fontSize: 9,
+    ...Typography.captionSmall,
     color: Colors.text_muted,
   },
   categoryTag: {
@@ -121,7 +120,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   categoryText: {
-    fontSize: 9,
-    fontWeight: '700',
+    ...Typography.captionBold,
   },
 });

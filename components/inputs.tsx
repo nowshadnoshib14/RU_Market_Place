@@ -7,6 +7,7 @@ import {
   Text,
 } from 'react-native';
 import { Colors } from '@/constants/colors';
+import { Typography } from '@/constants/typography';
 import { Feather } from '@expo/vector-icons';
 
 interface SearchBoxProps {
@@ -91,11 +92,11 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    fontSize: 12,
+    ...Typography.bodySmall,
     color: Colors.text_main,
   },
   placeholder: {
-    fontSize: 12,
+    ...Typography.bodySmall,
     color: Colors.text_muted,
     flex: 1,
   },
@@ -103,8 +104,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   label: {
-    fontSize: 12,
-    fontWeight: '700',
+    ...Typography.label,
     color: Colors.text_main,
     marginBottom: 5,
   },
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 13,
     paddingVertical: 10,
-    fontSize: 13,
+    ...Typography.bodySmall,
     color: Colors.text_main,
     backgroundColor: Colors.surface,
   },

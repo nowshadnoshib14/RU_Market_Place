@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   TextInput,
+  Image,
 } from 'react-native';
 import { Colors } from '@/constants/colors';
 import { PrimaryButton } from '@/components/buttons';
@@ -21,7 +22,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
   onNavigate,
   onTabPress,
 }) => {
-  const [email, setEmail] = useState('ahmed.rafi@ru.ac.bd');
+  const [email, setEmail] = useState('nowshadnoshib@ru.ac.bd');
   const [password, setPassword] = useState('••••••••');
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -35,27 +36,30 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
       >
         {/* Header */}
         <View style={styles.headerSection}>
-          <View style={styles.logoBox}>
-            <Text style={styles.logo}>RU</Text>
-          </View>
-          <Text style={styles.headerTitle}>RU Marketplace</Text>
-          <Text style={styles.headerSubtitle}>
-            Buy & sell within Rajshahi University
-          </Text>
+          <Image
+            source={require('../../assets/images/cover.jpg')}
+            style={styles.headerBackgroundImage}
+          />
+          <View style={styles.headerOverlay}>
+            <Text style={styles.headerTitle}>RU Marketplace</Text>
+            <Text style={styles.headerSubtitle}>
+              Buy & sell within Rajshahi University
+            </Text>
 
-          {/* Diagram SVG equivalent in simple view */}
-          <View style={styles.diagram}>
-            <View style={styles.diagramBox}>
-              <Text style={styles.diagramLabel}>Seller</Text>
-            </View>
-            <View style={styles.diagramArrow} />
-            <View style={[styles.diagramBox, styles.diagramCenter]}>
-              <Text style={styles.diagramCenterLabel}>RU MKT</Text>
-              <Text style={styles.diagramCenterSub}>Marketplace</Text>
-            </View>
-            <View style={styles.diagramArrow} />
-            <View style={styles.diagramBox}>
-              <Text style={styles.diagramLabel}>Buyer</Text>
+            {/* Diagram SVG equivalent in simple view */}
+            <View style={styles.diagram}>
+              <View style={styles.diagramBox}>
+                <Text style={styles.diagramLabel}>Seller</Text>
+              </View>
+              <View style={styles.diagramArrow} />
+              <View style={[styles.diagramBox, styles.diagramCenter]}>
+                <Text style={styles.diagramCenterLabel}>RU MKT</Text>
+                <Text style={styles.diagramCenterSub}>Marketplace</Text>
+              </View>
+              <View style={styles.diagramArrow} />
+              <View style={styles.diagramBox}>
+                <Text style={styles.diagramLabel}>Buyer</Text>
+              </View>
             </View>
           </View>
         </View>
@@ -160,38 +164,47 @@ const styles = StyleSheet.create({
   },
   headerSection: {
     backgroundColor: Colors.primary,
+    minHeight: 340,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  headerBackgroundImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
+  },
+  headerOverlay: {
     paddingHorizontal: 24,
     paddingTop: 40,
     paddingBottom: 34,
     alignItems: 'center',
-  },
-  logoBox: {
-    backgroundColor: 'rgba(255, 255, 255, 0.15)',
-    borderWidth: 2,
-    borderColor: 'rgba(255, 255, 255, 0.3)',
-    width: 56,
-    height: 56,
-    borderRadius: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  logo: {
-    fontSize: 22,
-    fontWeight: '900',
-    color: 'white',
-    letterSpacing: -1,
+    zIndex: 10,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    width: '100%',
   },
   headerTitle: {
     fontSize: 20,
     fontWeight: '800',
     color: 'white',
     marginBottom: 4,
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
   },
   headerSubtitle: {
     fontSize: 12,
-    color: 'rgba(255, 255, 255, 0.7)',
+    color: 'rgba(255, 255, 255, 0.95)',
     marginBottom: 20,
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 3,
   },
   diagram: {
     flexDirection: 'row',
@@ -218,20 +231,30 @@ const styles = StyleSheet.create({
   },
   diagramLabel: {
     fontSize: 9,
-    color: 'rgba(255, 255, 255, 0.7)',
+    color: 'white',
     textAlign: 'center',
+    fontWeight: '600',
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   diagramCenterLabel: {
     fontSize: 10,
     fontWeight: 'bold',
     color: 'white',
     textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   diagramCenterSub: {
     fontSize: 8,
-    color: 'rgba(255, 255, 255, 0.8)',
+    color: 'rgba(255, 255, 255, 0.95)',
     textAlign: 'center',
     marginTop: 2,
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
   diagramArrow: {
     width: 8,

@@ -1,17 +1,20 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { Colors } from '@/constants/colors';
+import { Typography } from '@/constants/typography';
 import { Feather } from '@expo/vector-icons';
 
 interface AppBarProps {
   title?: string;
   subtitle?: string;
   showLogo?: boolean;
+  logoImage?: any;
   onBackPress?: () => void;
   rightElement?: React.ReactNode;
 }
 
 export const AppBar: React.FC<AppBarProps> = ({
+    logoImage,
   title,
   subtitle,
   showLogo = false,
@@ -27,9 +30,16 @@ export const AppBar: React.FC<AppBarProps> = ({
     
     {showLogo ? (
       <View style={styles.logoContainer}>
-        <View style={styles.logo}>
-          <Text style={styles.logoText}>RU</Text>
-        </View>
+        {logoImage ? (
+          <Image 
+            source={logoImage}
+            style={styles.logoImage}
+          />
+        ) : (
+          <View style={styles.logo}>
+            <Text style={styles.logoText}>RU</Text>
+          </View>
+        )}
         <View style={styles.logoTextContainer}>
           <Text style={styles.title}>RU Marketplace</Text>
           <Text style={styles.subtitle}>University Of Rajshahi</Text>
@@ -74,9 +84,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  logoImage: {
+    width: 36,
+    height: 36,
+    borderRadius: 10,
+    resizeMode: 'contain',
+  },
   logoText: {
     color: 'white',
-    fontSize: 12,
+    ...Typography.labelSmall,
     fontWeight: '900',
     letterSpacing: -0.5,
   },
@@ -84,15 +100,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 14,
-    fontWeight: '800',
+    ...Typography.label,
     color: Colors.text_main,
     letterSpacing: -0.3,
   },
   subtitle: {
-    fontSize: 9,
+    ...Typography.captionSmall,
     color: Colors.text_muted,
-    fontWeight: '500',
     marginTop: 2,
   },
 });

@@ -9,6 +9,7 @@ import {
   Dimensions,
 } from 'react-native';
 import { Colors } from '@/constants/colors';
+import { Typography } from '@/constants/typography';
 import { AppBar } from '@/components/AppBar';
 import { SearchBox } from '@/components/inputs';
 import { Chip } from '@/components/Chip';
@@ -153,7 +154,12 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ onNavigate, onTabPress }
 
   return (
     <View style={styles.container}>
-      <AppBar showLogo title="RU Marketplace" subtitle="University Of Rajshahi" />
+      <AppBar 
+        showLogo 
+        logoImage={require('../../assets/images/RULogo.jpg')}
+        title="RU Marketplace" 
+        subtitle="University Of Rajshahi" 
+      />
 
       <ScrollView
         style={styles.scrollView}
@@ -248,20 +254,18 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   bannerLabel: {
-    fontSize: 9,
-    fontWeight: '700',
+    ...Typography.captionBold,
     color: 'rgba(255, 255, 255, 0.65)',
     letterSpacing: 1.2,
     marginBottom: 5,
   },
   bannerTitle: {
-    fontSize: 16,
-    fontWeight: '800',
+    ...Typography.h5,
     color: 'white',
     marginBottom: 3,
   },
   bannerSubtitle: {
-    fontSize: 11,
+    ...Typography.bodySmall,
     color: 'rgba(255, 255, 255, 0.7)',
   },
   sectionHeader: {
@@ -272,14 +276,12 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   sectionTitle: {
-    fontSize: 14,
-    fontWeight: '800',
+    ...Typography.h4,
     color: Colors.text_main,
   },
   seeAll: {
-    fontSize: 11,
+    ...Typography.labelSmall,
     color: Colors.primary,
-    fontWeight: '600',
   },
   productsGrid: {
     flexDirection: 'row',

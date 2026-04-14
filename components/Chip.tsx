@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { Colors } from '@/constants/colors';
+import { Typography } from '@/constants/typography';
 
 interface ChipProps {
   label: string;
@@ -33,8 +34,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.primary,
   },
   text: {
-    fontSize: 11,
-    fontWeight: '600',
+    ...Typography.labelSmall,
     color: Colors.primary,
   },
   activeText: {

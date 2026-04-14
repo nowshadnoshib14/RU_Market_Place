@@ -17,10 +17,10 @@ const { width } = Dimensions.get('window');
 const cardWidth = (width - 34) / 3;
 
 const MOCK_USER = {
-  name: 'Ahmed Rafi',
+  name: 'Md Nowshad Hasan Noshib',
   department: 'CSE 3rd Year, RU',
   location: 'Rajshahi, Bangladesh',
-  avatar: 'AR',
+  avatar: 'NHS',
   listings: 7,
   sold: 12,
   saved: 5,
@@ -293,7 +293,7 @@ const styles = StyleSheet.create({
   },
   headerBackground: {
     backgroundColor: Colors.primary,
-    backgroundImage: 'linear-gradient(160deg, #1D4ED8 0%, #2563EB 50%, #0EA5E9 100%)',
+    backgroundImage: 'linear-gradient(160deg, #41aeb0 0%, #3761bc 50%, #16a390 100%)',
   },
   headerContent: {
     paddingHorizontal: 24,
@@ -316,10 +316,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 3,
-    borderColor: 'rgba(255, 255, 255, 0.4)',
+    borderColor: 'rgba(171, 52, 120, 0.4)',
   },
   avatarText: {
-    color: 'white',
+    color: 'contrast',
     fontSize: 20,
     fontWeight: '800',
   },
@@ -338,11 +338,11 @@ const styles = StyleSheet.create({
   },
   userLocation: {
     fontSize: 10,
-    color: 'rgba(255, 255, 255, 0.6)',
+    color: 'rgb(29, 26, 26)',
     marginTop: 2,
   },
   editButton: {
-    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    backgroundColor: '#54B3DD',
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.3)',
     paddingHorizontal: 14,
@@ -409,7 +409,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingTop: 12,
     backgroundColor: Colors.bg,
-    gap: 8,
+    gap: 25,
   },
   gridItem: {
     width: `${100 / 3}%`,
@@ -441,7 +441,7 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   miniPrice: {
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: '800',
     color: Colors.primary,
   },
